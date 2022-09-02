@@ -27,14 +27,31 @@
         
       function register(e){
         e.preventDefault();
-        let name= e.target.name.value ;
-        let email = e.target.mail.value ;
-        let phone = e.target.phone.value ;
 
-        localStorage.setItem("name" , name);
-        localStorage.setItem("email" , email);
-        localStorage.setItem("phone" , phone);
-      }
+        // let name= e.target.name.value ;
+        // let email = e.target.mail.value ;
+        // let phone = e.target.phone.value ;
+
+        // localStorage.setItem("name" , name);
+        // localStorage.setItem("email" , email);
+        // localStorage.setItem("phone" , phone);
+
+        //////storing object in localstorage
+        let user = {
+            name : e.target.name.value ,
+            email : e.target.mail.value ,
+            phone : e.target.phone.value 
+        }
+        
+
+        localStorage.setItem("users" ,JSON.stringify( user));
+        console.log(localStorage);
+
+        let desrialized = JSON.parse(localStorage.getItem("users")) ;
+        console.log(desrialized);
+        
+    //   
+    }
 
     </script>
 </body>
